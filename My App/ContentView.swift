@@ -17,6 +17,17 @@ struct ContentView: View {
             HStack(alignment: .firstTextBaseline, spacing: /*@START_MENU_TOKEN@*/nil/*@END_MENU_TOKEN@*/, content: {
                 Text("Last Name: ")
             }).padding()
+            HStack(alignment: .firstTextBaseline, spacing: /*@START_MENU_TOKEN@*/nil/*@END_MENU_TOKEN@*/, content: {
+                    Text("GENDER: ")
+            }).padding()
+            HStack(alignment: .firstTextBaseline, spacing: /*@START_MENU_TOKEN@*/nil/*@END_MENU_TOKEN@*/, content: {
+                Text("AGE: ")
+            }).padding()
+            HStack(alignment: .center, spacing: /*@START_MENU_TOKEN@*/nil/*@END_MENU_TOKEN@*/, content: {
+                Button("SUBMIT") {
+                    
+                }
+            }).padding()
         })
     }
 }

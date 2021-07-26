@@ -8,22 +8,28 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var firstName = ""
+    @State private var lastName = ""
+    
     var body: some View {
         VStack(content: {
-            HStack(alignment: .firstTextBaseline, spacing: /*@START_MENU_TOKEN@*/nil/*@END_MENU_TOKEN@*/, content: {
+            HStack(alignment: .firstTextBaseline, spacing: nil, content: {
                 Text("First Name: ")
-                
+                TextField("First Name", text: $firstName)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
             }).padding()
-            HStack(alignment: .firstTextBaseline, spacing: /*@START_MENU_TOKEN@*/nil/*@END_MENU_TOKEN@*/, content: {
+            HStack(alignment: .firstTextBaseline, spacing: nil, content: {
                 Text("Last Name: ")
+                TextField("Last Name", text: $lastName)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
             }).padding()
-            HStack(alignment: .firstTextBaseline, spacing: /*@START_MENU_TOKEN@*/nil/*@END_MENU_TOKEN@*/, content: {
+            HStack(alignment: .firstTextBaseline, spacing: nil, content: {
                     Text("GENDER: ")
             }).padding()
-            HStack(alignment: .firstTextBaseline, spacing: /*@START_MENU_TOKEN@*/nil/*@END_MENU_TOKEN@*/, content: {
+            HStack(alignment: .firstTextBaseline, spacing: nil, content: {
                 Text("AGE: ")
             }).padding()
-            HStack(alignment: .center, spacing: /*@START_MENU_TOKEN@*/nil/*@END_MENU_TOKEN@*/, content: {
+            HStack(alignment: .center, spacing: nil, content: {
                 Button("SUBMIT") {
                     
                 }

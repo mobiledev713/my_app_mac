@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @State private var firstName = ""
     @State private var lastName = ""
+    @State private var ageIndex = 0
     
     var body: some View {
         VStack(content: {
@@ -28,6 +29,19 @@ struct ContentView: View {
             }).padding()
             HStack(alignment: .firstTextBaseline, spacing: nil, content: {
                 Text("AGE: ")
+                Menu {
+                    Button(action: { ageIndex = 0 }, label: {
+                        Text("Young")
+                    })
+                    Button(action: { ageIndex = 1 }, label: {
+                        Text("Adult")
+                    })
+                    Button(action: { ageIndex = 2 }, label: {
+                        Text("Old")
+                    })
+                } label: {
+                    Text("Young")
+                }
             }).padding()
             HStack(alignment: .center, spacing: nil, content: {
                 Button("SUBMIT") {

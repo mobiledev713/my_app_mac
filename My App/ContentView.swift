@@ -11,24 +11,45 @@ struct ContentView: View {
     @State private var firstName = ""
     @State private var lastName = ""
     @State private var ageIndex = 0
+    @State private var gender = "Male"
+    @State private var showingAlert = false
+    
+    let genders = ["Male", "Female"]
     
     var body: some View {
-        VStack(content: {
+        VStack(alignment: .center, content: {
             HStack(alignment: .firstTextBaseline, spacing: nil, content: {
                 Text("First Name: ")
+                    .frame(width: 100)
                 TextField("First Name", text: $firstName)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
-            }).padding()
+            })
+            .padding()
+            
             HStack(alignment: .firstTextBaseline, spacing: nil, content: {
                 Text("Last Name: ")
+                    .frame(width: 100)
                 TextField("Last Name", text: $lastName)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
-            }).padding()
+            })
+            .padding()
+            
             HStack(alignment: .firstTextBaseline, spacing: nil, content: {
-                    Text("GENDER: ")
-            }).padding()
+                Text("Gender: ")
+                    .frame(width: 100)
+                Picker("", selection: $gender) {
+                    Text(genders[0])
+                    Text(genders[1])
+                }
+                .pickerStyle(RadioGroupPickerStyle())
+                .horizontalRadioGroupLayout()
+                Spacer()
+            })
+            .padding()
+            
             HStack(alignment: .firstTextBaseline, spacing: nil, content: {
                 Text("AGE: ")
+                    .frame(width: 100)
                 Menu {
                     Button(action: { ageIndex = 0 }, label: {
                         Text("Young")
@@ -42,11 +63,14 @@ struct ContentView: View {
                 } label: {
                     Text("Young")
                 }
-            }).padding()
+            })
+            .padding()
+            
             HStack(alignment: .center, spacing: nil, content: {
                 Button("SUBMIT") {
-                    
+                    showingAlert = true
                 }
+                
             }).padding()
         })
     }

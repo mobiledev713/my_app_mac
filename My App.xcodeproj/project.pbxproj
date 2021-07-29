@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		84FF553526AA3ABE00E451EF /* My_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FF553426AA3ABE00E451EF /* My_AppApp.swift */; };
-		84FF553726AA3ABE00E451EF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FF553626AA3ABE00E451EF /* ContentView.swift */; };
+		84FF553726AA3ABE00E451EF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FF553626AA3ABE00E451EF /* HomeView.swift */; };
 		84FF553926AA3AC100E451EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84FF553826AA3AC100E451EF /* Assets.xcassets */; };
 		84FF553C26AA3AC100E451EF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84FF553B26AA3AC100E451EF /* Preview Assets.xcassets */; };
 		84FF554826AA3AC200E451EF /* My_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FF554726AA3AC200E451EF /* My_AppTests.swift */; };
@@ -35,7 +35,7 @@
 /* Begin PBXFileReference section */
 		84FF553126AA3ABE00E451EF /* My App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84FF553426AA3ABE00E451EF /* My_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = My_AppApp.swift; sourceTree = "<group>"; };
-		84FF553626AA3ABE00E451EF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		84FF553626AA3ABE00E451EF /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		84FF553826AA3AC100E451EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84FF553B26AA3AC100E451EF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		84FF553D26AA3AC100E451EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -97,7 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				84FF553426AA3ABE00E451EF /* My_AppApp.swift */,
-				84FF553626AA3ABE00E451EF /* ContentView.swift */,
+				84FF553626AA3ABE00E451EF /* HomeView.swift */,
 				84FF553826AA3AC100E451EF /* Assets.xcassets */,
 				84FF553D26AA3AC100E451EF /* Info.plist */,
 				84FF553E26AA3AC100E451EF /* My_App.entitlements */,
@@ -261,7 +261,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84FF553726AA3ABE00E451EF /* ContentView.swift in Sources */,
+				84FF553726AA3ABE00E451EF /* HomeView.swift in Sources */,
 				84FF553526AA3ABE00E451EF /* My_AppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

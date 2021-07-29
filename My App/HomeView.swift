@@ -1,20 +1,37 @@
 //
-//  ContentView.swift
+//  HomeView.swift
 //  My App
 //
-//  Created by admin on 7/22/21.
+//  Created by Vasyl on 7/22/21.
 //
 
 import SwiftUI
 
-struct ContentView: View {
+enum Gender: Int, CaseIterable, Identifiable {
+    case male
+    case female
+    
+    var id: Int { self.rawValue }
+}
+
+enum Age: Int, CaseIterable, Identifiable {
+    case young
+    case adult
+    case old
+    
+    var id: Int { self.rawValue }
+}
+
+struct HomeView: View {
     @State private var firstName = ""
     @State private var lastName = ""
-    @State private var ageIndex = 0
-    @State private var gender = "Male"
+    @State private var age = Age.young
+    @State private var gender = Gender.male
     @State private var showingAlert = false
+    @State private var resultString = ""
     
     let genders = ["Male", "Female"]
+    let ages = ["Young", "Adult", "Old"]
     
     var body: some View {
         VStack(alignment: .center, content: {
@@ -38,8 +55,8 @@ struct ContentView: View {
                 Text("Gender: ")
                     .frame(width: 100)
                 Picker("", selection: $gender) {
-                    Text(genders[0])
-                    Text(genders[1])
+                    Text("Male").tag(Gender.male)
+                    Text("Female").tag(Gender.female)
                 }
                 .pickerStyle(RadioGroupPickerStyle())
                 .horizontalRadioGroupLayout()
@@ -48,29 +65,38 @@ struct ContentView: View {
             .padding()
             
             HStack(alignment: .firstTextBaseline, spacing: nil, content: {
-                Text("AGE: ")
+                Text("Age: ")
                     .frame(width: 100)
                 Menu {
-                    Button(action: { ageIndex = 0 }, label: {
+                    Button(action: { age = Age.young }, label: {
                         Text("Young")
                     })
-                    Button(action: { ageIndex = 1 }, label: {
+                    Button(action: { age = Age.adult }, label: {
                         Text("Adult")
                     })
-                    Button(action: { ageIndex = 2 }, label: {
+                    Button(action: { age = Age.old }, label: {
                         Text("Old")
                     })
                 } label: {
-                    Text("Young")
+                    Text(ages[age.rawValue])
                 }
             })
             .padding()
             
             HStack(alignment: .center, spacing: nil, content: {
-                Button("SUBMIT") {
+                Button("Submit") {
                     showingAlert = true
+                    resultString = "Hello \(firstName) \(lastName), you are a \(ages[age.rawValue]) \(genders[gender.rawValue])"
+                    firstName = ""
+                    lastName = ""
+                    age = Age.young
+                    gender = Gender.male
                 }
-                
+                .alert(isPresented: $showingAlert, content: {
+                    Alert(title: Text(""), message: Text(resultString), primaryButton: .default(Text("Quit"), action: {
+                        NSApp.terminate(self)
+                    }), secondaryButton: .cancel(Text("Try Again")))
+                })
             }).padding()
         })
     }
@@ -78,6 +104,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        HomeView()
     }
 }

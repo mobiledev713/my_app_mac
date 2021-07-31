@@ -2,7 +2,7 @@
 //  My_AppApp.swift
 //  My App
 //
-//  Created by admin on 7/22/21.
+//  Created by Vasyl on 7/22/21.
 //
 
 import SwiftUI

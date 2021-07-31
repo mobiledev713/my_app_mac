@@ -2,7 +2,7 @@
 //  My_AppUITests.swift
 //  My AppUITests
 //
-//  Created by admin on 7/22/21.
+//  Created by Vasyl on 7/22/21.
 //
 
 import XCTest
